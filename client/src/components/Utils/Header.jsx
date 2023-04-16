@@ -24,7 +24,7 @@ const Header = () => {
             <Link to="/myauctions">My Auctions</Link>
           </li>
           <li>
-            <Link to="/logout">Log Out</Link>
+            <Link to="/">Log Out</Link>
           </li>
         </ul>
         <MenuItems showMenu={showMenu} active={active} />

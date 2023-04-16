@@ -17,10 +17,10 @@ const MenuItems = ({ showMenu, active }) => {
           <Link to="/home">Home</Link>
         </li>
         <li>
-          <Link to="/dashboard">Dashboard</Link>
+          <Link to="/myauctions">Dashboard</Link>
         </li>
         <li>
-          <Link to="/post">Post</Link>
+          <Link to="/">Post</Link>
         </li>
       </ul>
     </div>
