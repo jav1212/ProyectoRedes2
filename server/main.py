@@ -64,8 +64,11 @@ def threadHomeHandle():
 
 
 @socket_io.on('getHomeData')
-def handleRequestHomeData():
-    threading.Thread(target=threadHomeHandle()).start()
+def handleRequestHomeData(data):
+    if data:
+        print('llego verificar si cambio en la bdd')
+    else:
+        threading.Thread(target=threadHomeHandle()).start()
 
 
 def threadOfferHandle(data):

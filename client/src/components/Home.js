@@ -2,23 +2,33 @@ import React, { useEffect, useState } from "react";
 import Header from "./Utils/Header";
 import { socket } from "../settings/Socket";
 import Pages from "../components/Utils/Pages";
+import LoadPage from "./Utils/LoadPage";
 
 const Home = () => {
-  const [cars, setCars] = useState([{}]);
+  const [cars, setCars] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [dataArrived, setDataArrived] = useState(false);
 
   useEffect(() => {
-    socket.emit("getHomeData");
+    if (!dataArrived) {
+      socket.emit("getHomeData", dataArrived);
 
-    socket.on("homeData", (data) => {
-      setCars(data);
-    });
-
-    return () => {
-      socket.off("homeData", (data) => {
+      socket.on("homeData", (data) => {
         setCars(data);
+        setDataArrived(true);
       });
-    };
-  }, [setCars]);
+
+      return () => {
+        socket.off("homeData", (data) => {
+          setCars(data);
+        });
+      };
+    } else {
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 2000);
+    }
+  }, [cars, dataArrived]);
 
   return (
     <>
@@ -27,7 +37,7 @@ const Home = () => {
         className=" bg-gray-200"
         style={{ maxWidth: "screen", maxHeight: "screen" }}
       >
-        <Pages cars={cars} />
+        {isLoading ? <LoadPage /> : <Pages cars={cars} />}
       </div>
     </>
   );

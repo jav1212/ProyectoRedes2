@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { socket } from "../../settings/Socket";
+import spinStyle from "../styles/spin.css";
+import loadCardGif from "../../images/loadingCard.jpg";
+import Spinner from "react-bootstrap/esm/Spinner";
 
 const Card = ({ car }) => {
   const handleOffer = () => {
@@ -8,13 +11,20 @@ const Card = ({ car }) => {
       carId: car.id,
     });
   };
+
+  const [loading, setIsLoading] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {}, 2000);
+    setIsLoading(false);
+  }, [setIsLoading]);
+
   return (
     <div
       style={{ height: "300px", width: "450px" }}
       className="m-lg-2 rounded overflow-hidden flex flex-col shadow-lg"
     >
-      <img className="w-auto h-56" src={car.src} alt="" />
-      <div className="">
+      <img className=" w-auto h-56" src={car.src} alt="" />
+      <div>
         <div className="text-left ml-5  font-extrabold text-3xl uppercase">
           {car.brand}
         </div>
