@@ -9,12 +9,6 @@ const Card = ({ car }) => {
     });
   };
 
-  const [loading, setIsLoading] = useState(true);
-  useEffect(() => {
-    setTimeout(() => {}, 2000);
-    setIsLoading(false);
-  }, [setIsLoading]);
-
   return (
     <div
       style={{ height: "300px", width: "450px" }}
