@@ -15,8 +15,8 @@ root.render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/dashboard" element={<Myauctions />} />
-        <Route path="/post" element={<Logout />} />
+        <Route path="/myauctions" element={<Myauctions />} />
+        <Route path="/logout" element={<Logout />} />
       </Routes>
     </Router>
   </React.StrictMode>
