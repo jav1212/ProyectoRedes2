@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { socket } from "../../settings/Socket";
-import spinStyle from "../styles/spin.css";
-import loadCardGif from "../../images/loadingCard.jpg";
-import Spinner from "react-bootstrap/esm/Spinner";
 
 const Card = ({ car }) => {
   const handleOffer = () => {
