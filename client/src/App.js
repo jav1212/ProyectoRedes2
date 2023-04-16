@@ -3,6 +3,7 @@ import "./App.css";
 import { socket } from "./settings/Socket";
 import Header from "./components/Utils/Header";
 import Sections from "./components/Utils/Sections";
+import Login from "./components/Utils/Login";
 
 function App() {
   //TODO:This is connected is for a notification IMPORTANT
@@ -26,7 +27,7 @@ function App() {
 
   return (
     <>
-      <Header />
+      <Login />
       <Sections />
     </>
   );
