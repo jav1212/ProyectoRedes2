@@ -1,7 +1,12 @@
 import React from "react";
+import Header from "./Utils/Header";
 
 const Myauctions = () => {
-  return <div>Myauctions</div>;
+  return (
+    <>
+      <Header />
+    </>
+  );
 };
 
 export default Myauctions;

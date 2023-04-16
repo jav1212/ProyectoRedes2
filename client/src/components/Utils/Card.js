@@ -1,5 +1,5 @@
 import React from "react";
-import { socket } from "../../settings/socket";
+import { socket } from "../../settings/Socket";
 
 const Card = ({ car }) => {
   const handleOffer = () => {

@@ -21,10 +21,10 @@ const Header = () => {
             <Link to="/home">Home</Link>
           </li>
           <li>
-            <Link to="/myauctions">Dashboard</Link>
+            <Link to="/myauctions">My Auctions</Link>
           </li>
           <li>
-            <Link to="/logout">Post</Link>
+            <Link to="/logout">Log Out</Link>
           </li>
         </ul>
         <MenuItems showMenu={showMenu} active={active} />
